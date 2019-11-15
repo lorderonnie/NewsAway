@@ -3,4 +3,4 @@ from flask_bootstrap import Bootstrap
 app = Flask(__name__)
 
 
-return app
+from app import views
