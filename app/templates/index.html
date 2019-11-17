@@ -9,7 +9,33 @@
         {% endif %}
     </head>
     <body>
+             <h3> The latest News...</h3>
+         <ul>
+            {% for latest_news in latest %}
+                <li>{{ latest_news.title}}</li>
+            {% endfor %}
+        </ul>
 
+             <h3> The political era...</h3>
+         <ul>
+            {% for political_news in political %}
+                <li>{{ political_news.title}}</li>
+            {% endfor %}
+        </ul>
+
+             <h3> The sport nation...</h3>
+         <ul>
+            {% for sport_news in sport %}
+                <li>{{ sport_news.title}}</li>
+            {% endfor %}
+        </ul>
+
+             <h3> The social life...</h3>
+         <ul>
+            {% for social_news in social %}
+                <li>{{ social_news.title}}</li>
+            {% endfor %}
+        </ul>
     </body>
 </html>
 
