@@ -4,11 +4,11 @@ from app import app
 @app.route('/')
 def index():
        
-    
-    return render_template('index.html')
+    title = 'Home - Welcome to the most accessable news site in the world'
+    return render_template('index.html',title = title)
 
 
-@app.route('/news/news_id')
+@app.route('/news/<int:news_id>')
 def news(news_id):
     
     return render_template('news.html',id = news_id)
