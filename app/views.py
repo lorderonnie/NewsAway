@@ -1,11 +1,14 @@
 from flask import render_template
+from .requests import get_news
 from app import app
 
 @app.route('/')
 def index():
-       
-    title = 'Home - Welcome to the most accessable news site in the world'
-    return render_template('index.html',title = title)
+    latest_news = get_news('latest')
+    
+            
+    title = 'NewsAway'
+    return render_template('index.html',title = title,latest = latest_news)
 
 
 @app.route('/news/<int:news_id>')
