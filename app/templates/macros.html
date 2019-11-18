@@ -1,13 +1,24 @@
 {% macro displayNewsList(news_list) %}
-    <link href="https://fonts.googleapis.com/css?family=Playball&display=swap" rel="stylesheet">
+    <div class="row">
     {% for news in news_list %}
-        <ul>
-        <li>{{ news.name}}</li>
-        <li>{{news.description}}</li>
-        <a href="/article/{{news.id}}">
-        </ul>
-
-
-
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{news.description}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ news.name}}</h5>
+                    <p class="card-text">{{news.description}}</p>
+                    <a class="btn btn-primary" href="/article/{{news.id}}">
+                </div>
+            </div>
+        </div>
     {% endfor %}
 {% endmacro %}
+
+
+
+
+
+
+
+
+

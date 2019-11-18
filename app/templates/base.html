@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to NewsAway </title>
-        {% endif %}
-        
-    </head>
-  
-    <body>
-  
-    </body>
-</html>
+{% extends 'bootstrap/base.html'%}
+
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}

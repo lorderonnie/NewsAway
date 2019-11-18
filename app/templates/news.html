@@ -7,22 +7,57 @@
     {% else %}
     <title> Welcome to NewsAway </title>
     {% endif %}
+    <link href="https://fonts.googleapis.com/css?family=Playball|Alex+Brush|Lateef&display=swap" rel="stylesheet">
     
 </head>
 
+<style>
+#img{
+    height:250px;
+    width: 420px;
+}
+body{
+    background-image:url(https://elements-video-cover-images-0.imgix.net/files/207977474/primag.jpg?auto=compress%2Cformat&fit=min&h=394&w=700&s=70fb3b5fa63967b10360677d90d09c00);
+    background-size:contain;
+}
+b{
+      font-family: 'Lateef', cursive;
+      color:silver;
+      font-size:40px;
+}
+p{
+    color:white;
+    font-size:30px;
+    font-family: 'Playball', cursive;
+}
+h3{
+    color:white;
+    font-size:70px;
+    text-align:center;
+}
+</style>
+
 <body>
+<h3>The choosen source contains...</h3><br><br>
     <div class="row">
     {% for article in articles %}
-        <div class="col-md-4">
-            <div class="card">
+    <div class="col-md-3">
+        <div class="panel panel-default wow fadeIn" data-wow-duration="3.5s" id="card">
+            <div class="panel-heading">
+            </div>
+            <div class="panel-body">
                 <b>{{article.title}}</b>
                 <p>{{article.description}}</p>
-                <img src="{{article.urlToImage}}">                <p>{{article.content}}
-                <a href="{{article.url}}">read more</a>
-    {% endfor%}
-
+                <img src="{{article.urlToImage}}" id="img">
+                <p>{{article.content}}
+                <a  class="btn btn-outline-primary" href="{{article.url}}" >read more</a>
             </div>
         </div>
     </div>
+    {% endfor %}
+    </div>
 </body>
 </html>
+
+
+
