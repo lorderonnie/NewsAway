@@ -1,7 +1,13 @@
 {% macro displayNewsList(news_list) %}
-
+    <link href="https://fonts.googleapis.com/css?family=Playball&display=swap" rel="stylesheet">
     {% for news in news_list %}
-        <li>{{ news.title}}</li>
-    {% endfor %}
+        <ul>
+        <li>{{ news.name}}</li>
+        <li>{{news.description}}</li>
+        <a href="/article/{{news.id}}">
+        </ul>
 
+
+
+    {% endfor %}
 {% endmacro %}

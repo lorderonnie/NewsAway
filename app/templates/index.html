@@ -1,26 +1,21 @@
-{% extends 'base.html'%}
-{% import 'macros.html' as macro%}
-    {% block content %}
-        <h3> The latest News...</h3>
-            <ul>
-               {{ macro.displayNewsList(latest)}}
-            </ul>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> Welcome to NewsAway </title>
+    {% endif %}
+    
+</head>
 
-        <h3> The political era...</h3>
-            <ul>
-               {{ macro.displayNewsList(political)}}
-            </ul>
-
-        <h3> The sport nation...</h3>
-            <ul>
-               {{ macro.displayNewsList(sport)}}
-            </ul>
-
-        <h3> The social life...</h3>
-            <ul>
-              {{ macro.displayNewsList(social)}}
-            </ul>
-
-    {% endblock %}
-
-
+<body>
+    {% for source in sourcenews%}
+        <div class="card">
+        <p>{{source.name}}<p>
+        <p>{{source.id}}<p>
+        <a href="/news/{{source.description}}">view articles</a>
+    {% endfor%}
+</body>
+</html>

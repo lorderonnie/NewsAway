@@ -1,1 +1,28 @@
-<h1> Hello welcome to newsAway {{ id }} </h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> Welcome to NewsAway </title>
+    {% endif %}
+    
+</head>
+
+<body>
+    <div class="row">
+    {% for article in articles %}
+        <div class="col-md-4">
+            <div class="card">
+                <b>{{article.title}}</b>
+                <p>{{article.description}}</p>
+                <img src="{{article.urlToImage}}">                <p>{{article.content}}
+                <a href="{{article.url}}">read more</a>
+    {% endfor%}
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
