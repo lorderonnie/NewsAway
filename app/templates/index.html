@@ -1,46 +1,26 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to NewsAway </title>
-        {% endif %}
-        {% import 'macros.html' as macro%}
-    </head>
-  
-    <body>
-             <h3> The latest News...</h3>
-         <ul>
-            {% for latest_news in latest %}
-                <li>{{ latest_news.title}}</li>
-            {% endfor %}
-        </ul>
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+    {% block content %}
+        <h3> The latest News...</h3>
+            <ul>
+               {{ macro.displayNewsList(latest)}}
+            </ul>
 
-             <h3> The political era...</h3>
-         <ul>
-            {% for political_news in political %}
-                <li>{{ political_news.title}}</li>
-            {% endfor %}
-        </ul>
+        <h3> The political era...</h3>
+            <ul>
+               {{ macro.displayNewsList(political)}}
+            </ul>
 
-             <h3> The sport nation...</h3>
-         <ul>
-            {% for sport_news in sport %}
-                <li>{{ sport_news.title}}</li>
-            {% endfor %}
-        </ul>
+        <h3> The sport nation...</h3>
+            <ul>
+               {{ macro.displayNewsList(sport)}}
+            </ul>
 
-             <h3> The social life...</h3>
-         <ul>
-            {% for social_news in social %}
-                <li>{{ social_news.title}}</li>
-            {% endfor %}
-        </ul>
-    </body>
-</html>
+        <h3> The social life...</h3>
+            <ul>
+              {{ macro.displayNewsList(social)}}
+            </ul>
 
-
+    {% endblock %}
 
 

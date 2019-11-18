@@ -1,15 +1,14 @@
 from flask import render_template
-from .requests import get_news
+from .requests import get_newsSources,tophigh
 from app import app
 
 @app.route('/')
 def index():
-    latest_news = get_news('latest')
-    political_news = get_news('political')
-    sport_news =   get_news('sport')
-    social_news =  get_news('social')   
+    tophighlights = tophigh('politics')
+    newssources = get_newsSources('sources')
+    print(newssources)
     title = 'NewsAway'
-    return render_template('index.html',title = title,latest = latest_news,political = political_news,sport = sport_news,social = social_news)
+    return render_template('index.html',title = title,tophigh = tophighlights,sourcenews = newssources)
 
 
 @app.route('/news/<int:news_id>')
